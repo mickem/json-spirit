@@ -81,7 +81,7 @@ namespace
         Value v1( 1 );
         Value v2( 1 );
         Value v3( INT_MAX );
-        Value v4( ULLONG_MAX );
+        Value v4( static_cast<uint64_t>(ULLONG_MAX) );
 
         assert_eq( v1.type(), Value::INT_TYPE );
         assert_eq ( v1, v2 );
@@ -91,7 +91,7 @@ namespace
         assert_neq( v1, v4 );
 
         unsigned int uint_max = INT_MAX;
-        unsigned long long ullong_max = ULLONG_MAX;
+        uint64_t ullong_max = ULLONG_MAX;
 
         assert_eq( v1.getInt(),    1 );
         assert_eq( v1.getInt64(),  1 );
