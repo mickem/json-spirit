@@ -86,7 +86,6 @@ namespace json_spirit {
         BasicValue( unsigned int value );
         BasicValue( long value );
         BasicValue( unsigned long value );
-        BasicValue( unsigned long long value );
 // Handling 64-bit is tricky, this is similar to the rules for 64-bit typedefs
 // in boost's cstdint.
 #ifdef BOOST_HAS_STDINT_H
@@ -505,12 +504,6 @@ namespace json_spirit {
 
     template< class Config >
     BasicValue< Config >::BasicValue( unsigned long value )
-    :   v_( static_cast< boost::uint64_t >( value ) )
-    {
-    }
-
-    template< class Config >
-    BasicValue< Config >::BasicValue( unsigned long long value )
     :   v_( static_cast< boost::uint64_t >( value ) )
     {
     }
