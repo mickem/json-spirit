@@ -19,7 +19,6 @@ namespace
 {
     const int64_t max_int64   = integer_traits< int64_t  >::max();
     const uint64_t max_uint64 = integer_traits< uint64_t >::max();
-    const unsigned long long max_ullong = integer_traits< unsigned long long >::max();
 
     template< class Config_type >
     struct Test_runner
@@ -601,7 +600,6 @@ namespace
             check_eq( ValueType( uint64_t( max_int64 ) ), "9223372036854775807" );
 
             check_eq( ValueType( max_uint64 ), "18446744073709551615" );
-            check_eq( ValueType( max_ullong), "18446744073709551615" );
         }
 
         void test_ios_state_saved()
